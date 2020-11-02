@@ -8,7 +8,7 @@ Simple but yet powerful library for running some [artisan](https://laravel.com/d
 - **php** ^7.3
 
 ## Installation
-Just install package:\
+Just install package:
 ```bash
 composer require infureal/artisan-gui
 ```
