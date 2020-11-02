@@ -6,6 +6,7 @@ Simple but yet powerful library for running some [artisan](https://laravel.com/d
 ## Requirements 
 - **Laravel** 8.*
 - **php** ^7.3
+- **internet connection**. For what? For accessing cdns to tailwindcss and alpinejs
 
 ## Installation
 Just install package:
@@ -20,7 +21,7 @@ php artisan vendor:publish --provider="Laravel\Tinker\TinkerServiceProvider"
 
 ## Running command
 Simply go to `http://you-domain.com/artisan` and here we go! 
-Select needed command from list, type fill arguments and options/flags and hit `run` button.
+Select needed command from list, fill arguments and options/flags and hit `run` button.
 
 ## Issues
 If have any issue please [write me](https://github.com/inFureal/artisan-gui/issues).
