@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%" />
+<img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
 # <a href="https://laravel.com" target="_blank"><img src="https://laravel.com/img/logotype.min.svg" width="100"></a>:artisan gui
 ![Packagist License](https://img.shields.io/packagist/l/infureal/artisan-gui?style=flat)
@@ -27,6 +27,8 @@ php artisan vendor:publish --provider="Infureal\Providers\GuiServiceProvider"
 ```
 
 ## Running command
+By default, you can access this page only when in local environment.
+
 Simply go to `http://you-domain.com/artisan` and here we go! 
 Select needed command from list, fill arguments and options/flags and hit `run` button.
 
