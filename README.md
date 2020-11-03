@@ -16,7 +16,7 @@ composer require infureal/artisan-gui
 
 For some "flexibility" you can publish config file `config/artisan-gui.php`:
 ```bash
-php artisan vendor:publish --provider="Laravel\Tinker\TinkerServiceProvider"
+php artisan vendor:publish --provider="Infureal\Providers\GuiServiceProvider"
 ```
 
 ## Running command
