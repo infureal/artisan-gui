@@ -29,7 +29,7 @@ php artisan vendor:publish --provider="Infureal\Providers\GuiServiceProvider"
 ## Running command
 By default, you can access this page only when in local environment.
 
-Simply go to `http://you-domain.com/artisan` and here we go! 
+Simply go to `http://you-domain.com/~artisan` and here we go! 
 Select needed command from list, fill arguments and options/flags and hit `run` button.
 
 ## Issues

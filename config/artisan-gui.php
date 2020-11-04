@@ -5,6 +5,9 @@ return [
     // Show commands only when authenticated
     'auth' => true,
 
+    // route prefix -> ~artisan
+    'prefix' => '~',
+
     // Register routes only when local environment
     'only_local' => true,
 

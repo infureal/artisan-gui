@@ -6,6 +6,7 @@ namespace Infureal\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Infureal\Http\Controllers\GuiController;
+use Infureal\View\Components\Command;
 use Infureal\View\Components\Group;
 use Infureal\View\Components\Header;
 
@@ -14,7 +15,7 @@ class GuiServiceProvider extends ServiceProvider  {
 
     protected $root;
     const COMPONENTS = [
-        \Infureal\View\Components\Command::class,
+        Command::class,
         Header::class,
         Group::class,
     ];
@@ -28,17 +29,13 @@ class GuiServiceProvider extends ServiceProvider  {
         $middleware = ['web'];
 
         if (config('artisan-gui.auth', false))
-            $middleware += ['auth'];
+            $middleware[] = 'auth';
 
         \Route::middleware($middleware)
-            ->prefix('artisan')
+            ->prefix(config('artisan-gui.prefix', '~') . 'artisan')
             ->group(function () {
 
-                \Route::get('/', [GuiController::class, 'index'])
-                    ->name('gui.index');
-
-                \Route::post('{command}', [GuiController::class, 'run'])
-                    ->name('gui.run');
+                $this->loadRoutesFrom("{$this->root}/routes/web.php");
 
             });
     }
@@ -60,7 +57,7 @@ class GuiServiceProvider extends ServiceProvider  {
         // Publish config file [config/artisan-gui.php]
         $this->publishes([
             "{$this->root}/config/artisan-gui.php" => config_path('artisan-gui.php')
-        ], 'config');
+        ], 'artisan-gui-config');
 
         // Share $__trs variable to views. Just to prevent some repeating
         \View::share('__trs', 'transition ease-in-out duration-150');
