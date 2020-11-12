@@ -1,5 +1,5 @@
 {
-    "name": "saineshmamgain/artisan-gui",
+    "name": "infureal/artisan-gui",
     "type": "library",
     "description": "Beautiful package for [laravel:artisan] gui for cool kids.",
     "license": "MIT",
