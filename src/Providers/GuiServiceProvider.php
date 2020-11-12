@@ -38,7 +38,14 @@ class GuiServiceProvider extends ServiceProvider  {
             });
     }
 
-    function boot() {
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . "{$this->root}/config/artisan-gui.php", 'artisan-gui'
+        );
+    }
+
+    public function boot() {
 
         $local = $this->app->environment('local');
         $only = config('artisan-gui.only_local', true);
