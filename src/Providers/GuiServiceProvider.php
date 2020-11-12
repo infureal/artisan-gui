@@ -41,7 +41,7 @@ class GuiServiceProvider extends ServiceProvider  {
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . "{$this->root}/config/artisan-gui.php", 'artisan-gui'
+            "{$this->root}/config/artisan-gui.php", 'artisan-gui'
         );
     }
 
