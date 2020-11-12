@@ -2,8 +2,11 @@
 
 return [
 
-    // Show commands only when authenticated
-    'auth' => true,
+    // Add middlewares to the route
+    'middlewares' => [
+        'web',
+//        'auth'
+    ],
 
     // route prefix -> ~artisan
     'prefix' => '~',

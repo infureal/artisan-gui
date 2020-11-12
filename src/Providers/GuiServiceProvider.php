@@ -26,10 +26,8 @@ class GuiServiceProvider extends ServiceProvider  {
     }
 
     protected function createRoutes() {
-        $middleware = ['web'];
 
-        if (config('artisan-gui.auth', false))
-            $middleware[] = 'auth';
+        $middleware = config('artisan-gui.middlewares');
 
         \Route::middleware($middleware)
             ->prefix(config('artisan-gui.prefix', '~') . 'artisan')
