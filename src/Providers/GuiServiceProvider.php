@@ -26,10 +26,8 @@ class GuiServiceProvider extends ServiceProvider  {
     }
 
     protected function createRoutes() {
-        $middleware = ['web'];
 
-        if (config('artisan-gui.auth', false))
-            $middleware[] = 'auth';
+        $middleware = config('artisan-gui.middlewares');
 
         \Route::middleware($middleware)
             ->prefix(config('artisan-gui.prefix', '~') . 'artisan')
@@ -40,7 +38,14 @@ class GuiServiceProvider extends ServiceProvider  {
             });
     }
 
-    function boot() {
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            "{$this->root}/config/artisan-gui.php", 'artisan-gui'
+        );
+    }
+
+    public function boot() {
 
         $local = $this->app->environment('local');
         $only = config('artisan-gui.only_local', true);
