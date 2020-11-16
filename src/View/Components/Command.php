@@ -6,7 +6,6 @@ namespace Infureal\View\Components;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\View\Component;
-use Infureal\Providers\GuiServiceProvider;
 
 class Command extends Component {
 

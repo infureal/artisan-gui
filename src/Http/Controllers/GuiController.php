@@ -17,7 +17,9 @@ class GuiController extends Controller {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     function index() {
-        return view("gui::index");
+        return view('gui::index', [
+            'commands' => config('artisan-gui.commands', [])
+        ]);
     }
 
     function run($command) {

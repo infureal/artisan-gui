@@ -3,7 +3,7 @@
     <div :class="{'bg-white p-6 rounded-md': tab == '{{ $id }}'}">
 
         {{-- Open button --}}
-        <div x-show="tab != '{{ $id }}'" class="{{ $__trs }} px-6 py-4 cursor-pointer hover:bg-gray-300 rounded-md" @click="tab = '{{ $id }}'">
+        <div x-show="tab != '{{ $id }}'" class="{{ $__trs }} px-6 py-4 cursor-pointer hover:bg-gray-300 rounded-md" @click="window.localStorage.setItem('gui-tab', tab = '{{ $id }}')">
             <div class="text-xl">
                 {{ $title = Str::title($id) }}
             </div>
