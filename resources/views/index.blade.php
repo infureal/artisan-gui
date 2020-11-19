@@ -28,7 +28,7 @@
             Artisan
         </h1>
 
-        <a href="{{ config('artisan-gui.home', url('/')) }}"
+        <a href="{{ url(config('artisan-gui.home', '/')) }}"
            class="{{ $__trs }} text-gray-500 hover:text-gray-800 px-4 py-2 rounded hover:bg-gray-300">
             ./home
         </a>
@@ -42,7 +42,19 @@
                 [{{ session('command') }}] command output
             </div>
 
-            <pre>{{ trim(session('output')->fetch()) }}</pre>
+            <pre>{{ trim(session('output')) }}</pre>
+        </div>
+    @endif
+
+    @if($errors->any())
+        <div class="p-6 bg-red-500 text-red-100 rounded-md overflow-x-auto mb-6">
+            <div class="grid grid-cols-1 gap-4">
+                @foreach($errors->all() as $error)
+                    <div>
+                        {{ $error }}
+                    </div>
+                @endforeach
+            </div>
         </div>
     @endif
 

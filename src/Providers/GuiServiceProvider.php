@@ -8,7 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
 
 
-class GuiServiceProvider extends ServiceProvider  {
+class GuiServiceProvider extends ServiceProvider {
 
     protected $root;
 
@@ -19,7 +19,7 @@ class GuiServiceProvider extends ServiceProvider  {
 
     protected function registerRoutes() {
 
-        $middleware = config('artisan-gui.middlewares');
+        $middleware = config('artisan-gui.middlewares', []);
 
         \Route::middleware($middleware)
             ->prefix(config('artisan-gui.prefix', '~') . 'artisan')
@@ -30,16 +30,10 @@ class GuiServiceProvider extends ServiceProvider  {
             });
     }
 
-    public function register()
-    {
+    public function register() {
         $this->mergeConfigFrom(
             "{$this->root}/config/artisan-gui.php", 'artisan-gui'
         );
-        $this->loadComponents();
-        $this->loadViewsFrom("{$this->root}/resources/views", 'gui');
-    }
-
-    public function boot() {
 
         $local = $this->app->environment('local');
         $only = config('artisan-gui.local', true);
@@ -47,6 +41,11 @@ class GuiServiceProvider extends ServiceProvider  {
         if ($local || !$only)
             $this->registerRoutes();
 
+        $this->loadComponents();
+        $this->loadViewsFrom("{$this->root}/resources/views", 'gui');
+    }
+
+    public function boot() {
         $this->publishVendors();
         \View::share('__trs', 'transition ease-in-out duration-150');
         \View::share('guiRoot', $this->root);

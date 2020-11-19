@@ -9,7 +9,6 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
-use Infureal\Providers\GuiServiceProvider;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Output\BufferedOutput;
 
@@ -41,7 +40,13 @@ class GuiController extends Controller {
         }
 
         $output = new BufferedOutput();
-        $status = Artisan::call($command->getName(), $params, $output);
+        try {
+            $status = Artisan::call($command->getName(), $params, $output);
+            $output = $output->fetch();
+        } catch (\Exception $exception) {
+            $status = $exception->getCode() ?? 500;
+            $output = $exception->getMessage();
+        }
 
         return back()
             ->with([
