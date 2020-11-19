@@ -68,7 +68,7 @@ return [
     | Route prefix
     |--------------------------------------------------------------------------
     |
-    | Prefix for advisor routes. By default url is [/~artisan-gui].
+    | Prefix for gui routes. By default url is [/~artisan-gui].
     | For your wish you can set it for example 'my-'. So url will be [/my-artisan-gui].
     |
     | Why tilda? It's selected for prevent route names correlation.
