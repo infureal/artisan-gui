@@ -21,7 +21,7 @@ class Command extends Component {
         $commands = Artisan::all();
 
         if (!in_array($name, array_keys($commands)))
-            throw new \Exception("Command not found");
+            throw new \Exception("Command \"{$name}\" not found");
 
         $this->command = $commands[$name];
         $this->arguments = $this->command->getDefinition()->getArguments();
