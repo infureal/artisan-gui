@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Beautiful package for [laravel:artisan] gui for cool kids.",
     "license": "MIT",
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
     "require": {
         "php": "^7.3|^8.0",
         "laravel/framework": "^8.0"
