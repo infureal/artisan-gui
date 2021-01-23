@@ -54,6 +54,7 @@ Select needed command from list, fill arguments and options/flags and hit `run` 
 ## What's new in v2
 - Moved to SPA/Vue
 - UI changed to more readable (IMHO)
+  - <img width="500px" src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui-2.0.0.png" />
 - Implementing search (with new design it's hard to find some command without search)
 - Added permission field to config (for more flexible adjustment)
 - Added array option fields
