@@ -1,5 +1,6 @@
 <img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
+
 # <a href="https://laravel.com" target="_blank"><img src="https://laravel.com/img/logotype.min.svg" width="100"></a>:artisan gui
 ![Packagist License](https://img.shields.io/packagist/l/infureal/artisan-gui?style=flat)
 ![Packagist Version](https://img.shields.io/packagist/v/infureal/artisan-gui)
@@ -20,6 +21,13 @@ Just install package:
 composer require infureal/artisan-gui
 ```
 
+### Installing 2.0.0@beta
+```bash
+composer require infureal/artisan-gui:2.0.0@beta
+```
+
+### Vendor publishing
+
 By default package has predefined config and inline styles and scripts. 
 Since version `1.4` you can publish vendors like css and js files in `vendor/artisan-gui`:
 ```bash
@@ -35,12 +43,20 @@ Publish only styles and scripts:
 php artisan vendor:publish --tag="artisan-gui-css-js"
 ```
 
+
 ## Running command
 By default, you can access this page only in local environment. If you wish
 you can change `local` key in config. 
 
 Simply go to `http://you-domain.com/~artisan` and here we go! 
 Select needed command from list, fill arguments and options/flags and hit `run` button.
+
+## What's new in v2
+- Moved to SPA/Vue
+- UI changed to more readable (IMHO)
+- Implementing search (with new design it's hard to find some command without search)
+- Added permission field to config (for more flexible adjustment)
+- Added array option fields
 
 ## Configuration
 Default config is:
@@ -95,7 +111,23 @@ return [
     |
     */
     'local' => true,
-
+    
+    /*
+    |--------------------------------------------------------------------------
+    | List of command permissions
+    |--------------------------------------------------------------------------
+    |
+    | Specify permissions to every single command. Can be a string or array
+    | of permissions
+    |
+    | Example:
+    |   'make:controller' => 'create-controller',
+    |   'make:event' => ['generate-files', 'create-event'],
+    |
+    */
+    'permissions' => [
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | List of commands
