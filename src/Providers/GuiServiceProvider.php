@@ -41,15 +41,13 @@ class GuiServiceProvider extends ServiceProvider {
         if ($local || !$only)
             $this->registerRoutes();
 
-        $this->loadComponents();
+//        $this->loadComponents();
         $this->loadViewsFrom("{$this->root}/resources/views", 'gui');
     }
 
     public function boot() {
         $this->publishVendors();
-        \View::share('__trs', 'transition ease-in-out duration-150');
         \View::share('guiRoot', $this->root);
-
     }
 
     protected function publishVendors() {

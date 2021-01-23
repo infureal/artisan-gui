@@ -10,10 +10,16 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "alpinejs": "^2.7.3",
+    "axios": "^0.21.1",
+    "browser-sync": "^2.26.13",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "cross-env": "^7.0.2",
-    "laravel-mix": "^5.0.9",
-    "tailwindcss": "^1.9.6",
+    "laravel-mix": "^6.0",
+    "postcss": "^8.1.14",
+    "qs": "^6.9.6",
+    "tailwindcss": "^2.0",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.5",
     "vue-template-compiler": "^2.6.12"
   }
 }

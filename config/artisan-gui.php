@@ -51,6 +51,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | List of command permissions
+    |--------------------------------------------------------------------------
+    |
+    | Specify permissions to every single command. Can be a string or array
+    | of permissions
+    |
+    | Example:
+    |   'make:controller' => 'create-controller',
+    |   'make:event' => ['generate-files', 'create-event'],
+    |
+    */
+    'permissions' => [
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | List of commands
     |--------------------------------------------------------------------------
     |

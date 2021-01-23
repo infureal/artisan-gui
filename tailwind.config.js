@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -10,6 +12,9 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: ['Roboto Mono', 'monospace']
+      },
+      colors: {
+        primary: colors.red,
       }
     },
   },
