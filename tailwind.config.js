@@ -6,7 +6,8 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: [
-      './resources/views/**/*.blade.php'
+      './resources/views/**/*.blade.php',
+      './resources/js/**/*.vue',
   ],
   theme: {
     extend: {

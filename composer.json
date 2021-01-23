@@ -21,6 +21,14 @@
         }
     },
     "archive": {
-        "exclude": []
+        "exclude": [
+            "./resources/js",
+            "./resources/css",
+            "./tailwind.config.js",
+            "./webpack.mix.js",
+            "./mix-manifest.json",
+            "./package.json",
+            "./package-lock.json"
+        ]
     }
 }
