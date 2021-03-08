@@ -11,7 +11,7 @@
       Status: {{ status }}
     </div>
 
-    <div v-html="output">
+    <div class="whitespace-pre" v-html="output">
     </div>
   </div>
 
