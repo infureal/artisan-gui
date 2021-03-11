@@ -50,7 +50,7 @@ class GuiController extends Controller {
             $params[$key] = $value;
         }
 
-        $output = new BufferedOutput();
+        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, true);
         try {
             $status = Artisan::call($command->getName(), $params, $output);
             $output = $output->fetch();

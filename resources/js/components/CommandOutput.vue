@@ -11,14 +11,28 @@
       Status: {{ status }}
     </div>
 
-    <div v-html="output">
+    <div v-html="styledOutput">
     </div>
   </div>
 
 </template>
 
 <script>
+import { parse } from 'ansicolor';
+
 export default {
-  props: ['command', 'status', 'output']
+  props: ['command', 'status', 'output'],
+  computed: {
+    styledOutput() {
+      const { spans } = parse(this.output);
+
+      let styled = ''
+      for (let span of spans) {
+        styled += `<span style="${span.css}">${span.text}</span>`
+      }
+
+      return styled
+    }
+  }
 }
 </script>
