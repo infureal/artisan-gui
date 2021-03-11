@@ -33,6 +33,8 @@ export default {
 
     if (this.old)
       this.value = this.old
+    else if (this.argument.default)
+      this.value = this.argument.default
 
     if (this.error)
       this.errorMessage = this.error

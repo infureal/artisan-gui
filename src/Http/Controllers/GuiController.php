@@ -50,7 +50,7 @@ class GuiController extends Controller {
             $params[$key] = $value;
         }
 
-        $output = new BufferedOutput();
+        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, true);
         try {
             $status = Artisan::call($command->getName(), $params, $output);
             $output = $output->fetch();
@@ -88,6 +88,12 @@ class GuiController extends Controller {
 
                 $commands[$gKey][$cKey] = $this->commandToArray($defined[$command] ?? $command);
             }
+
+            if (empty($commands[$gKey])) {
+                unset($commands[$gKey]);
+                continue;
+            }
+
             $commands[$gKey] = array_values($commands[$gKey]);
         }
 
