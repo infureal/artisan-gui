@@ -126,7 +126,7 @@ class GuiController extends Controller {
 
         $options = array_map(function (InputOption $option) {
             return [
-                'title' => \Str::of($option->getName())->replace('_', ' ')->title()->__toString(),
+                'title' => \Str::of($option->getName())->snake()->replace('_', ' ')->title()->__toString(),
                 'name' => $option->getName(),
                 'description' => $option->getDescription(),
                 'shortcut' => $option->getShortcut(),
@@ -144,7 +144,7 @@ class GuiController extends Controller {
         $definition = $command->getDefinition();
         $arguments = array_map(function (InputArgument $argument) {
             return [
-                'title' => \Str::of($argument->getName())->replace('_', ' ')->title()->__toString(),
+                'title' => \Str::of($argument->getName())->snake()->replace('_', ' ')->title()->__toString(),
                 'name' => $argument->getName(),
                 'description' => $argument->getDescription(),
                 'default' => empty($default = $argument->getDefault()) ? null : $default,
