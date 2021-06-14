@@ -5,7 +5,11 @@ namespace Infureal\Providers;
 
 
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 
 class GuiServiceProvider extends ServiceProvider {
@@ -21,7 +25,7 @@ class GuiServiceProvider extends ServiceProvider {
 
         $middleware = config('artisan-gui.middlewares', []);
 
-        \Route::middleware($middleware)
+        Route::middleware($middleware)
             ->prefix(config('artisan-gui.prefix', '~') . 'artisan')
             ->group(function () {
 
@@ -47,7 +51,7 @@ class GuiServiceProvider extends ServiceProvider {
 
     public function boot() {
         $this->publishVendors();
-        \View::share('guiRoot', $this->root);
+        View::share('guiRoot', $this->root);
     }
 
     protected function publishVendors() {
@@ -69,7 +73,7 @@ class GuiServiceProvider extends ServiceProvider {
         $prefix = 'gui';
 
         if ($dir)
-            $prefix .= '-' . \Str::of($dir)->replace(['\\', '/'], ' ')->slug();
+            $prefix .= '-' . Str::of($dir)->replace(['\\', '/'], ' ')->slug();
 
         $namespace = '';
 
@@ -100,7 +104,7 @@ class GuiServiceProvider extends ServiceProvider {
         foreach ($components as $key => $group) {
             foreach ($group as $component) {
                 $name = strtolower(last(explode('\\', $component)));
-                \Blade::component($component, $name, $key);
+                Blade::component($component, $name, $key);
             }
         }
 
