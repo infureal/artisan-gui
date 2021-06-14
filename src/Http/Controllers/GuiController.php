@@ -9,6 +9,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Str;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -31,7 +33,7 @@ class GuiController extends Controller {
 
         $permissions = config('artisan-gui.permissions', []);
 
-        if (in_array($command->getName(), array_keys($permissions)) && !\Gate::check($permissions[$command->getName()]))
+        if (in_array($command->getName(), array_keys($permissions)) && !Gate::check($permissions[$command->getName()]))
             abort(403);
 
         $rules = $this->buildRules($command);
@@ -81,7 +83,7 @@ class GuiController extends Controller {
         foreach ($commands as $gKey => $group) {
             foreach ($group as $cKey => $command) {
 
-                if (($permission = $permissions[$command] ?? null) && !\Gate::check($permission)) {
+                if (($permission = $permissions[$command] ?? null) && !Gate::check($permission)) {
                     unset($commands[$gKey][$cKey]);
                     continue;
                 }
@@ -126,7 +128,7 @@ class GuiController extends Controller {
 
         $options = array_map(function (InputOption $option) {
             return [
-                'title' => \Str::of($option->getName())->snake()->replace('_', ' ')->title()->__toString(),
+                'title' => Str::of($option->getName())->snake()->replace('_', ' ')->title()->__toString(),
                 'name' => $option->getName(),
                 'description' => $option->getDescription(),
                 'shortcut' => $option->getShortcut(),
@@ -144,7 +146,7 @@ class GuiController extends Controller {
         $definition = $command->getDefinition();
         $arguments = array_map(function (InputArgument $argument) {
             return [
-                'title' => \Str::of($argument->getName())->snake()->replace('_', ' ')->title()->__toString(),
+                'title' => Str::of($argument->getName())->snake()->replace('_', ' ')->title()->__toString(),
                 'name' => $argument->getName(),
                 'description' => $argument->getDescription(),
                 'default' => empty($default = $argument->getDefault()) ? null : $default,
@@ -158,7 +160,7 @@ class GuiController extends Controller {
 
     protected function renameKeys(array $array): array {
         $keys = array_map(function ($key) {
-            return \Str::title($key);
+            return Str::title($key);
         }, array_keys($array));
 
         return array_combine($keys, array_values($array));
