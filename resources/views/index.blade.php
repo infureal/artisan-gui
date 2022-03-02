@@ -13,7 +13,7 @@
 <body class="bg-gray-100 font-mono">
 
     <div id="app">
-        <app home="{{ url(config('artisan-gui.home', '/')) }}" endpoint="{{ route('gui.index') }}" />
+        <app home="{{ url(config('artisan-gui.home', '/')) }}" endpoint="{{ config('artisan-gui.force-https', false) ? secure_url(URL::route('gui.index', [], false)) : route('gui.index') }}" />
     </div>
 
     @include('gui::partials.scripts')
