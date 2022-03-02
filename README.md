@@ -1,3 +1,7 @@
+> This package now in very slow development. It's not abandoned, you can still use it. 
+> 
+> Currently, started development of the new package. [#34](https://github.com/infureal/artisan-gui/issues/36)
+
 <img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
 
