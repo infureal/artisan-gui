@@ -65,12 +65,18 @@
         leave-class="transform translate-y-0"
         leave-to-class="transform translate-y-full"
     >
-    <div v-if="output != null" class="w-full fixed bottom-0 left-0 mb-6">
-
-      <div @click="output = null" class="container mx-auto cursor-pointer rounded-2xl overflow-hidden px-4 md:px-0">
+    <div v-click-outside="closeCommand" v-if="output != null" class="w-full fixed bottom-0 left-0 mb-6">
+      <div class="container mx-auto rounded-2xl overflow-hidden px-4 md:px-0 relative">
+        <div class="absolute flex top-3 right-3">
+          <button @click="closeCommand"
+                  class="focus:outline-none flex items-center justify-center h-10 w-10 rounded-full bg-white hover:shadow-xl text-gray-900 hover:text-gray-900 hover:bg-gray-200 transition ease-in-out duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="h-4 w-4" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
         <command-output :command="output.command" :status="output.status" :output="output.output.replaceAll('\n', '<br />')" />
       </div>
-
     </div>
     </transition>
 
@@ -82,7 +88,6 @@
 import TopBar from "./components/TopBar";
 import Group from "./components/Group";
 import CommandSidebar from "./components/CommandSidebar";
-import Output from "./components/CommandOutput";
 import CommandOutput from "./components/CommandOutput";
 
 export default {
@@ -182,6 +187,11 @@ export default {
           this.loading = false;
         });
 
+    },
+    closeCommand() {
+      if (this.output !== null) {
+        this.output = null;
+      }
     },
     onSearch(search) {
       this.search = search
