@@ -1,8 +1,8 @@
+[![Dependency Review and Auto-Merge](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml)
+
 > Updated original artisan-gui package to work with Laravel 10 & PHP8.3
 >
 > Old version is still available at [infureal/artisan-gui](https://github.com/infureal/artisan-gui)
-
-[![Dependency Review](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml/badge.svg?branch=main)](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml)
 
 <img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
