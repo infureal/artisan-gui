@@ -1,6 +1,6 @@
-> This package now in very slow development. It's not abandoned, you can still use it. 
-> 
-> Currently, started development of the new package. [#34](https://github.com/infureal/artisan-gui/issues/36)
+> Updated original artisan-gui package to work with Laravel 10 & PHP8.3 
+>
+> Old version is still available at [infureal/artisan-gui](https://github.com/infureal/artisan-gui)
 
 <img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
@@ -16,18 +16,13 @@
 Simple but yet powerful library for running some [artisan](https://laravel.com/docs/8.x/artisan) commands.
 
 ## Requirements 
-- **Laravel** 8.*
-- **php** ^7.3
+- **Laravel** 10.*
+- **php** ^8
 
 ## Installation
 Just install package:
 ```bash
-composer require infureal/artisan-gui
-```
-
-### Installing 2.0.0@beta
-```bash
-composer require infureal/artisan-gui:2.0.0@beta
+composer require Tachii/artisan-gui
 ```
 
 ### Vendor publishing
@@ -150,6 +145,3 @@ return [
 ];
 
 ```
-
-## Issues
-If have any issue please [write me](https://github.com/inFureal/artisan-gui/issues).
