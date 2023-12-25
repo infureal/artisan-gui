@@ -1,4 +1,4 @@
-[![Dependency Review and Auto-Merge](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml)
+[![Latest Version](https://img.shields.io/packagist/v/intervention/image.svg)](https://packagist.org/packages/tachii/artisan-gui)
 
 > Updated original artisan-gui package to work with Laravel 10 & PHP8.3
 >
