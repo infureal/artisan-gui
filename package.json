@@ -16,7 +16,7 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "cross-env": "^7.0.2",
     "laravel-mix": "^6.0",
-    "postcss": "^8.1.14",
+    "postcss": "^8.4.31",
     "qs": "^6.9.6",
     "tailwindcss": "^2.0",
     "vue": "^2.6.12",
