@@ -21,10 +21,6 @@ jobs:
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
       # Additional steps for auto-merging
-      - name: Merge Queue Action
-        # You may pin to the exact commit or the version.
-        # uses: autifyhq/merge-queue-action@fb39457c8938aaa5665a5b5c41c33e6a3dd52d9f
-        uses: autifyhq/merge-queue-action@v0.1.0
       - name: 'Automatically Merge PR'
         if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
         run: |
