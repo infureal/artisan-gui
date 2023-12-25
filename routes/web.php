@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 use Infureal\Http\Controllers\GuiController;
 
 Route::get('/', [GuiController::class, 'index'])->name('gui.index');
