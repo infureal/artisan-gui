@@ -2,6 +2,8 @@
 >
 > Old version is still available at [infureal/artisan-gui](https://github.com/infureal/artisan-gui)
 
+[![Dependency Review](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml/badge.svg?branch=main)](https://github.com/Tachii/artisan-gui/actions/workflows/dependency-review.yml)
+
 <img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
 # <a href="https://laravel.com" target="_blank"><img src="https://laravel.com/img/logotype.min.svg" width="100"></a>:artisan gui
