@@ -9,7 +9,8 @@
     "laravel/framework": "^8.0|^9.0|^10.0"
   },
   "replace": {
-    "laravel-shift/artisan-gui": "*"
+    "laravel-shift/artisan-gui": "*",
+    "infureal/artisan-gui": "*"
   },
   "autoload": {
     "psr-4": {
