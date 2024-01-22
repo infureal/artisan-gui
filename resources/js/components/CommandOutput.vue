@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import { parse } from 'ansicolor';
+import {parse} from 'ansicolor';
 
 export default {
   props: ['command', 'status', 'output'],
   computed: {
     styledOutput() {
-      const { spans } = parse(this.output);
+      const {spans} = parse(this.output);
 
       let styled = ''
       for (let span of spans) {

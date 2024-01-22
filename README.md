@@ -1,70 +1,70 @@
-> This package now in very slow development. It's not abandoned, you can still use it. 
-> 
-> Currently, started development of the new package. [#34](https://github.com/infureal/artisan-gui/issues/36)
+[![Latest Version](https://img.shields.io/packagist/v/intervention/image.svg)](https://packagist.org/packages/tachii/artisan-gui)
+
+> Updated original artisan-gui package to work with Laravel 10 & PHP8.3
+>
+> Old version is still available at [infureal/artisan-gui](https://github.com/infureal/artisan-gui)
 
 <img src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui.png" style="max-width: 100%"  alt="Artisan GUI"/>
 
-
 # <a href="https://laravel.com" target="_blank"><img src="https://laravel.com/img/logotype.min.svg" width="100"></a>:artisan gui
-![Packagist License](https://img.shields.io/packagist/l/infureal/artisan-gui?style=flat)
-![Packagist Version](https://img.shields.io/packagist/v/infureal/artisan-gui)
-![Packagist Downloads](https://img.shields.io/packagist/dt/infureal/artisan-gui)
-![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/infureal/artisan-gui)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/infureal/artisan-gui)
-
 
 Simple but yet powerful library for running some [artisan](https://laravel.com/docs/8.x/artisan) commands.
 
-## Requirements 
-- **Laravel** 8.*
-- **php** ^7.3
+## Requirements
+
+- **Laravel** 10.*
+- **php** ^8
 
 ## Installation
-Just install package:
-```bash
-composer require infureal/artisan-gui
-```
 
-### Installing 2.0.0@beta
+Just install package:
+
 ```bash
-composer require infureal/artisan-gui:2.0.0@beta
+composer require Tachii/artisan-gui
 ```
 
 ### Vendor publishing
 
-By default package has predefined config and inline styles and scripts. 
+By default package has predefined config and inline styles and scripts.
 Since version `1.4` you can publish vendors like css and js files in `vendor/artisan-gui`:
+
 ```bash
 php artisan vendor:publish --provider="Infureal\Providers\GuiServiceProvider"
 ```
-Publish only config: 
+
+Publish only config:
+
 ```bash
 php artisan vendor:publish --tag="artisan-gui-config"
 ```
 
-Publish only styles and scripts: 
+Publish only styles and scripts:
+
 ```bash
 php artisan vendor:publish --tag="artisan-gui-css-js"
 ```
 
-
 ## Running command
-By default, you can access this page only in local environment. If you wish
-you can change `local` key in config. 
 
-Simply go to `http://you-domain.com/~artisan` and here we go! 
+By default, you can access this page only in local environment. If you wish
+you can change `local` key in config.
+
+Simply go to `http://you-domain.com/~artisan` and here we go!
 Select needed command from list, fill arguments and options/flags and hit `run` button.
 
 ## What's new in v2
+
 - Moved to SPA/Vue
 - UI changed to more readable (IMHO)
-  - <img width="500px" src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui-2.0.0.png" />
+    - <img width="500px" src="https://raw.githubusercontent.com/inFureal/git-images/main/artisan-gui-2.0.0.png" />
 - Implementing search (with new design it's hard to find some command without search)
 - Added permission field to config (for more flexible adjustment)
 - Added array option fields
 
 ## Configuration
+
 Default config is:
+
 ```php 
 <?php
 
@@ -150,6 +150,3 @@ return [
 ];
 
 ```
-
-## Issues
-If have any issue please [write me](https://github.com/inFureal/artisan-gui/issues).

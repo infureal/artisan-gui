@@ -5,7 +5,8 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <command-card @select="$emit('select', command)" :command="command" v-for="command in commands" :key="command.name" />
+      <command-card v-for="command in commands" :key="command.name" :command="command"
+                    @select="$emit('select', command)"/>
     </div>
 
   </div>

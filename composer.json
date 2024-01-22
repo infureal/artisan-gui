@@ -1,34 +1,37 @@
 {
-    "name": "infureal/artisan-gui",
-    "type": "library",
-    "description": "Beautiful package for [laravel:artisan] gui for cool kids.",
-    "license": "MIT",
-    "minimum-stability": "beta",
-    "require": {
-        "php": "^7.3|^8.0",
-        "laravel/framework": "^8.0|^9.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Infureal\\": "./src"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Infureal\\Providers\\GuiServiceProvider"
-            ]
-        }
-    },
-    "archive": {
-        "exclude": [
-            "./resources/js",
-            "./resources/css",
-            "./tailwind.config.js",
-            "./webpack.mix.js",
-            "./mix-manifest.json",
-            "./package.json",
-            "./package-lock.json"
-        ]
+  "name": "tachii/artisan-gui",
+  "type": "library",
+  "description": "Beautiful package for [laravel:artisan] gui for cool kids.",
+  "license": "MIT",
+  "minimum-stability": "beta",
+  "require": {
+    "php": "^7.3|^8.0",
+    "laravel/framework": "^8.0|^9.0|^10.0"
+  },
+  "replace": {
+    "infureal/artisan-gui": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Infureal\\": "./src"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Infureal\\Providers\\GuiServiceProvider"
+      ]
+    }
+  },
+  "archive": {
+    "exclude": [
+      "./resources/js",
+      "./resources/css",
+      "./tailwind.config.js",
+      "./webpack.mix.js",
+      "./mix-manifest.json",
+      "./package.json",
+      "./package-lock.json"
+    ]
+  }
 }

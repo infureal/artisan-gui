@@ -13,7 +13,7 @@ return [
     */
     'middlewares' => [
         'web',
-//        'auth'
+      //'auth'
     ],
 
     /*
@@ -27,7 +27,7 @@ return [
     | Why tilda? It's selected for prevent route names correlation.
     |
     */
-    'prefix' => '~',
+    'prefix'      => '~',
 
     /*
     |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ return [
     | Where to go when [home] button is pressed
     |
     */
-    'home' => '/',
+    'home'        => '/',
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ return [
     | Flag that preventing showing commands if environment is on production
     |
     */
-    'local' => true,
+    'local'       => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -72,8 +72,7 @@ return [
     |   'make:event' => ['generate-files', 'create-event'],
     |
     */
-    'permissions' => [
-    ],
+    'permissions' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -85,8 +84,8 @@ return [
     | Keys means group. You can shuffle commands as you wish and add your own.
     |
     */
-    'commands' => [
-        'laravel' => [
+    'commands'    => [
+        'laravel'  => [
             'clear-compiled',
             'down',
             'up',
@@ -107,7 +106,7 @@ return [
             'optimize',
             'optimize:clear',
         ],
-        'cache' => [
+        'cache'    => [
             'cache:clear',
             'cache:forget',
             'cache:table',
@@ -118,13 +117,13 @@ return [
             'db:seed',
             'db:wipe',
         ],
-        'events' => [
+        'events'   => [
             'event:cache',
             'event:clear',
             'event:generate',
             'event:list',
         ],
-        'make' => [
+        'make'     => [
             'make:cast',
             'make:channel',
             'make:command',
@@ -149,7 +148,7 @@ return [
             'make:seeder',
             'make:test',
         ],
-        'migrate' => [
+        'migrate'  => [
             'migrate',
             'migrate:fresh',
             'migrate:install',
@@ -158,7 +157,7 @@ return [
             'migrate:rollback',
             'migrate:status',
         ],
-        'queue' => [
+        'queue'    => [
             'queue:batches-table',
             'queue:clear',
             'queue:failed',
@@ -170,12 +169,12 @@ return [
             'queue:retry-batch',
             'queue:table',
         ],
-        'route' => [
+        'route'    => [
             'route:cache',
             'route:clear',
             'route:list',
         ],
-        'view' => [
+        'view'     => [
             'view:cache',
             'view:clear'
         ]
